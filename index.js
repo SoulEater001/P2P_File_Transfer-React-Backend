@@ -17,6 +17,7 @@ const io = new Server(server, {
         origin: 'https://shareware-p2p.netlify.app', // Allow requests from your frontend
         methods: ['GET', 'POST'],
         transports: ['websocket', 'polling'],
+        allowedHeaders: ['Content-Type']
     },
 });
 const userPeerMapping = {};
