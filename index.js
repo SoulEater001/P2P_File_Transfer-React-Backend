@@ -22,7 +22,12 @@ const io = new Server(server, {
 const userPeerMapping = {};
 
 // Middleware
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+    origin: 'shareware-p2p.netlify.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type']
+}))
 app.use(express.json());
 
 // Basic route for testing server
